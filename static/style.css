@@ -262,6 +262,35 @@ h1 span {
   -webkit-text-fill-color: transparent;
 }
 
+.creator-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 10px 17px;
+  border: 1px solid #ffd8756b;
+  border-radius: 999px;
+  color: #ffe6a0;
+  background: linear-gradient(100deg, #ffda751c, #ff8fa91c);
+  box-shadow: 0 0 24px #ffcb6c16, inset 0 1px #ffffff18;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .15em;
+}
+
+.creator-signature strong {
+  color: #ff9aad;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: .19em;
+  text-shadow: 0 0 18px #fa79a758;
+}
+
+.signature-star {
+  color: #ffd875;
+  font-size: 16px;
+}
+
 .subtitle {
   color: #d2c4dc;
 }
@@ -1331,19 +1360,6 @@ h1 span {
 
 .footer-cake {
   font-size: 16px;
-}
-
-.creator-credit {
-  flex-basis: 100%;
-  color: #c4b5d0;
-  font-size: 10px;
-  letter-spacing: .08em;
-  text-align: center;
-}
-
-.creator-credit strong {
-  color: #ffd875;
-  font-weight: 700;
 }
 
 .confetti {
