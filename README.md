@@ -1,44 +1,35 @@
-# 🎂 Birthday Wish Maker
+# Birthday Wish Maker
 
-HTML + CSS + Python (Flask) ka simple web app — naam daalo aur personalised birthday wish pao.
+A small Flask app that creates a personalized birthday wish from a name.
+
+## Run locally
+
+```bash
+python -m pip install -r requirements.txt
+python app.py
+```
+
+Open <http://127.0.0.1:8000>.
+
+## Deploy on Render
+
+1. Push this repository to GitHub or another Git provider connected to Render.
+2. In Render, choose **New → Blueprint** and select this repository. Render reads
+   `render.yaml` to create the web service.
+3. Confirm the `birthday-wish-maker` service and deploy it. The blueprint uses
+   Render's free web service plan; you can change the plan in `render.yaml` if
+   needed.
+
+The blueprint installs dependencies from `requirements.txt`, starts the app with
+Gunicorn, and checks `/` for service health. No secrets or additional environment
+variables are required. Render assigns the service's port automatically.
 
 ## Files
-| File | Kaam |
-|------|------|
-| `app.py` | Flask server + birthday wish generator (Python) |
-| `index.html` | Page structure + naam input form (HTML) |
-| `style.css` | Birthday theme, balloons, confetti (CSS) |
-| `requirements.txt` | Dependencies (`flask`) |
 
-## Local run (apne computer par)
-```bash
-pip install flask
-py app.py
-```
-Browser me kholo: **http://127.0.0.1:8000**
-
-## Deploy to PythonAnywhere (free)
-1. **GitHub** par ye code push karo (naya repo banao, phir):
-   ```bash
-   git remote add origin https://github.com/<your-username>/birthday-wish.git
-   git push -u origin main
-   ```
-2. **PythonAnywhere.com** par account banao (free) → **Web** tab → **Add a new web app** → **Manual configuration** → koi bhi Python version.
-3. **Bash console** kholo aur repo clone karo:
-   ```bash
-   git clone https://github.com/<your-username>/birthday-wish.git
-   ```
-4. **Web** tab me apne web app ke **WSGI file** ka link kholo (blue link — `/var/www/..._wsgi.py`) aur content ko isse replace karo:
-   ```python
-   import sys
-   path = '/home/<your-pythonanywhere-username>/birthday-wish'
-   if path not in sys.path:
-       sys.path.append(path)
-
-   from app import app as application
-   ```
-   (`<your-pythonanywhere-username>` aur folder name apna lagaao)
-5. **Web** tab me **Reload** button dabao.
-6. Apna public URL kholo (e.g. `https://<your-username>.pythonanywhere.com`) 🎉
-
-> Note: PythonAnywhere par Flask already pre-installed hai, isliye `requirements.txt` optional hai — par repo me rakhna best practice hai.
+| File | Purpose |
+| --- | --- |
+| `app.py` | Flask routes and birthday wish generation |
+| `index.html` | Page structure and name form |
+| `style.css` | Page styling and animations |
+| `requirements.txt` | Flask and Gunicorn dependencies |
+| `render.yaml` | Render Blueprint deployment configuration |

@@ -68,4 +68,5 @@ def style():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000)
+    # Render provides PORT at runtime; localhost is used for local development.
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "8000")))
