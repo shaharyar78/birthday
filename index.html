@@ -19,48 +19,507 @@
 
   <main class="page-shell">
     <header class="topbar">
-      <a class="brand" href="/" aria-label="Birthday Wish Maker home"><span class="brand-icon">b.</span><span>little celebrations</span></a>
-      <span class="top-note"><span class="online-dot"></span> Made for your favourite people</span>
+      <a
+        class="brand"
+        href="/"
+        aria-label="Birthday Wish Maker home"
+      >
+        <span class="brand-icon">b.</span>
+        <span>little celebrations</span>
+      </a>
+      <span class="top-note">
+        <span class="online-dot"></span>
+        Made for your favourite people
+      </span>
     </header>
 
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
         <p class="eyebrow"><span>✦</span> A little birthday magic <span>✦</span></p>
-        <h1 id="page-title">Make their day<br /><span>feel extra special.</span></h1>
-        <p class="subtitle">A birthday only comes once a year. Make your wish count with a note that feels warm, personal, and full of love.</p>
+        <h1 id="page-title">Today is all<br /><span>about them.</span></h1>
+        <p class="subtitle">Skip the ordinary “happy birthday.” Give someone you love a little moment that feels like it was made just for them.</p>
 
-        <div class="social-proof" aria-label="Made with love">
-          <div class="avatar-stack" aria-hidden="true"><span>😊</span><span>🥳</span><span>💛</span></div>
-          <p><strong>A little note goes a long way</strong><br /><span>Thoughtful wishes, made in seconds</span></p>
+        <div class="social-proof" aria-label="A heartfelt birthday message">
+          <div class="avatar-stack" aria-hidden="true">
+            <span>😊</span>
+            <span>🥳</span>
+            <span>💛</span>
+          </div>
+          <p>
+            <strong>One name. One lovely surprise.</strong>
+            <br />
+            <span>A birthday message with more heart</span>
+          </p>
         </div>
       </div>
 
       <div class="celebration-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <span class="art-star star-a">✦</span><span class="art-star star-b">✧</span><span class="art-star star-c">✦</span>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <span class="art-star star-a">✦</span>
+        <span class="art-star star-b">✧</span>
+        <span class="art-star star-c">✦</span>
         <div class="cake-plate"></div>
-        <div class="cake-illustration"><div class="cake-top"><i></i><i></i><i></i><i></i><i></i></div><div class="cake-layer layer-top"></div><div class="cake-layer layer-bottom"></div><div class="cake-drip"></div><div class="candle"><span></span></div></div>
-        <span class="art-balloon balloon-pink">♥</span><span class="art-balloon balloon-yellow">✦</span><span class="art-balloon balloon-blue">✿</span>
+        <div class="cake-illustration">
+          <div class="cake-top">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div class="cake-layer layer-top"></div>
+          <div class="cake-layer layer-bottom"></div>
+          <div class="cake-drip"></div>
+          <div class="candle">
+            <span></span>
+          </div>
+        </div>
+        <span class="art-balloon balloon-pink">♥</span>
+        <span class="art-balloon balloon-yellow">✦</span>
+        <span class="art-balloon balloon-blue">✿</span>
       </div>
     </section>
 
     <section class="wish-builder" aria-labelledby="builder-title">
-      <div class="builder-heading"><span class="step-number">01</span><div><h2 id="builder-title">Who are we celebrating?</h2><p>We'll make a lovely birthday wish just for them.</p></div></div>
+      <div class="builder-heading">
+        <span class="step-number">01</span>
+        <div>
+          <h2 id="builder-title">Who are we celebrating?</h2>
+          <p>Tell us a little about them. We'll turn it into a wish that sounds like you.</p>
+        </div>
+      </div>
+
       <form class="wish-form" action="/wish" method="post">
-        <label for="name">Their name</label>
-        <div class="input-row"><div class="input-wrap"><span class="input-icon" aria-hidden="true">✎</span><input id="name" name="name" type="text" placeholder="e.g. Priya, Rahul, Aisha..." required autocomplete="given-name" maxlength="40" /></div><button type="submit" class="btn"><span>Make a wish</span><span class="button-sparkle" aria-hidden="true">✦</span></button></div>
-        <p class="form-hint"><span aria-hidden="true">♡</span> Just their first name is perfect</p>
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="name">Their name <span class="required-mark">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">✎</span>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="e.g. Priya, Rahul, Aisha..."
+                required
+                autocomplete="given-name"
+                maxlength="40"
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="relationship">How are they your person?</label>
+            <div class="select-wrap">
+              <select id="relationship" name="relationship">
+                <option value="friend">A dear friend</option>
+                <option value="sibling">My sibling</option>
+                <option value="parent">My parent</option>
+                <option value="partner">My partner</option>
+                <option value="coworker">A work bestie</option>
+                <option value="family">My family</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </div>
+          </div>
+
+          <div class="field-group field-wide">
+            <label for="special_thing">One thing you love about them <span class="optional-mark">OPTIONAL</span></label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">♡</span>
+              <input
+                id="special_thing"
+                name="special_thing"
+                type="text"
+                placeholder="Their giant laugh, their honest advice, how they always show up..."
+                maxlength="90"
+              />
+              <div class="quality-chips" aria-label="Quick ideas for what you love about them">
+                <button type="button" class="quality-chip" data-quality="their laugh">their laugh</button>
+                <button type="button" class="quality-chip" data-quality="their kind heart">their kind heart</button>
+                <button type="button" class="quality-chip" data-quality="how they always show up">how they show up</button>
+                <button type="button" class="quality-chip" data-quality="the way they make everyone feel welcome">how they welcome everyone</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group field-wide">
+            <label for="memory">A favourite memory together <span class="optional-mark">OPTIONAL</span></label>
+            <textarea
+              id="memory"
+              name="memory"
+              rows="2"
+              maxlength="140"
+              placeholder="That road trip, the time we couldn't stop laughing, our Sunday coffee catch-ups..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-bottom">
+          <p class="form-hint"><span aria-hidden="true">♡</span> Add a detail and make it unmistakably theirs.</p>
+          <button type="submit" class="btn">
+            <span>Make their wish</span>
+            <span class="button-sparkle" aria-hidden="true">✦</span>
+          </button>
+        </div>
       </form>
     </section>
 
     <!-- Python injects the personalised wish here -->
     <!--WISH_SECTION-->
 
-    <footer class="footer"><span>Made with <span class="heart">♥</span> and a little bit of confetti</span><span class="footer-cake" aria-hidden="true">🎂</span></footer>
+    <section class="inspiration" aria-labelledby="inspiration-title">
+      <div class="section-heading">
+        <p class="section-kicker">A FEW WORDS THAT MATTER</p>
+        <h2 id="inspiration-title">More than just “have a good one.”</h2>
+        <p>Because the best birthday wishes remind someone how much they mean to you.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card note-coral">
+          <span class="note-icon" aria-hidden="true">☀</span>
+          <p class="note-label">FOR THEIR BIG HEART</p>
+          <p class="note-quote">“The world feels a little kinder with you in it.”</p>
+          <span class="note-number">01</span>
+        </article>
+
+        <article class="note-card note-lilac">
+          <span class="note-icon" aria-hidden="true">✿</span>
+          <p class="note-label">FOR THEIR NEXT CHAPTER</p>
+          <p class="note-quote">“May this year bring you closer to everything you dream about.”</p>
+          <span class="note-number">02</span>
+        </article>
+
+        <article class="note-card note-butter">
+          <span class="note-icon" aria-hidden="true">♡</span>
+          <p class="note-label">FOR THEIR HAPPY PLACE</p>
+          <p class="note-quote">“More belly laughs, favourite people, and cake. Lots of cake.”</p>
+          <span class="note-number">03</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="birthday-toast" aria-labelledby="toast-title">
+      <div class="toast-decoration" aria-hidden="true">“</div>
+      <div class="toast-copy">
+        <p class="section-kicker">A LITTLE BIRTHDAY TOAST</p>
+        <h2 id="toast-title">Here's to the person<br />who makes life brighter.</h2>
+        <p>To the late-night laughs, the kind words, the stories we keep telling, and all the ordinary days you make feel special. Here's to everything you are—and all the wonderful things still ahead.</p>
+      </div>
+      <div class="toast-stamp" aria-hidden="true"><span>CHEERS</span><b>✦</b><span>TO YOU</span></div>
+    </section>
+
+    <section class="wish-library" aria-labelledby="library-title">
+      <div class="section-heading">
+        <p class="section-kicker">NEED A PLACE TO START?</p>
+        <h2 id="library-title">A few feelings for your favourite people.</h2>
+        <p>Choose a little inspiration. We'll add it to your personal birthday wish.</p>
+      </div>
+
+      <div class="library-grid">
+        <article class="library-card library-friend">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">☀</span>
+            <span class="library-category">YOUR BEST FRIEND</span>
+          </div>
+          <h3>For your built-in good time</h3>
+          <p>“Thanks for being the person I can laugh with until everything feels okay again.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="friend"
+            data-quality="the way you make even ordinary days more fun"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="library-card library-sibling">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">✿</span>
+            <span class="library-category">YOUR SIBLING</span>
+          </div>
+          <h3>For your forever teammate</h3>
+          <p>“We have a whole lifetime of stories, and I'm so glad you're in every one.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="sibling"
+            data-quality="being my forever teammate through every chapter"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="library-card library-parent">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">♡</span>
+            <span class="library-category">YOUR PARENT</span>
+          </div>
+          <h3>For your first safe place</h3>
+          <p>“So much of the good in me started with the love and care you gave.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="parent"
+            data-quality="the care and love you've always given me"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="library-card library-partner">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">✧</span>
+            <span class="library-category">YOUR PERSON</span>
+          </div>
+          <h3>For your favourite hello</h3>
+          <p>“Life has more colour, more calm, and a lot more laughter with you beside me.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="partner"
+            data-quality="the way you make life feel more like home"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="library-card library-coworker">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">✦</span>
+            <span class="library-category">YOUR WORK BESTIE</span>
+          </div>
+          <h3>For your office bright spot</h3>
+          <p>“Everything is a little easier—and much more fun—with you on the team.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="coworker"
+            data-quality="the good energy you bring to every team"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="library-card library-family">
+          <div class="library-card-top">
+            <span class="library-icon" aria-hidden="true">❋</span>
+            <span class="library-category">YOUR FAMILY</span>
+          </div>
+          <h3>For your always-and-forever</h3>
+          <p>“No matter where life takes us, you will always be one of my favourite people.”</p>
+          <button
+            type="button"
+            class="library-pick"
+            data-relationship="family"
+            data-quality="the way you make family feel like a warm place to land"
+          >
+            Add this feeling
+            <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="birthday-details" aria-labelledby="details-title">
+      <div class="details-copy">
+        <p class="section-kicker">THE LITTLE DETAILS ARE THE BIG THING</p>
+        <h2 id="details-title">Make it sound like <em>you</em>.</h2>
+        <p>A perfect birthday message doesn't need fancy words. It just needs one true thing about the person you love.</p>
+      </div>
+      <div class="detail-points">
+        <article class="detail-point">
+          <span class="detail-check" aria-hidden="true">✓</span>
+          <div>
+            <h3>Say what you notice</h3>
+            <p>The way they make people feel, or the small thing they do without thinking.</p>
+          </div>
+        </article>
+        <article class="detail-point">
+          <span class="detail-check" aria-hidden="true">✓</span>
+          <div>
+            <h3>Bring back a good memory</h3>
+            <p>One shared moment can make a whole birthday note feel like yours.</p>
+          </div>
+        </article>
+        <article class="detail-point">
+          <span class="detail-check" aria-hidden="true">✓</span>
+          <div>
+            <h3>Tell them what you hope for</h3>
+            <p>Wish them a year that feels happy, peaceful, brave, or full of adventure.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="words-to-borrow" aria-labelledby="words-title">
+      <div class="section-heading">
+        <p class="section-kicker">IF YOU WANT TO ADD ONE MORE LINE</p>
+        <h2 id="words-title">Borrow a few words from the heart.</h2>
+        <p>Mix and match a feeling. The most meaningful messages sound honest, not perfect.</p>
+      </div>
+
+      <div class="borrow-grid">
+        <article class="borrow-card borrow-gratitude">
+          <span class="borrow-mark" aria-hidden="true">01 / THANK YOU</span>
+          <p class="borrow-quote">“Thank you for being someone I can count on, laugh with, and be completely myself around.”</p>
+          <p class="borrow-prompt">A lovely fit for someone who is always there.</p>
+        </article>
+
+        <article class="borrow-card borrow-pride">
+          <span class="borrow-mark" aria-hidden="true">02 / I'M PROUD OF YOU</span>
+          <p class="borrow-quote">“I hope you take a moment today to see how far you've come. I am so proud of the person you are.”</p>
+          <p class="borrow-prompt">A little encouragement for their next chapter.</p>
+        </article>
+
+        <article class="borrow-card borrow-laughter">
+          <span class="borrow-mark" aria-hidden="true">03 / LET'S LAUGH</span>
+          <p class="borrow-quote">“May your year be full of ridiculous stories, happy accidents, and absolutely no one singing off-key at your cake.”</p>
+          <p class="borrow-prompt">For a person who makes everything more fun.</p>
+        </article>
+
+        <article class="borrow-card borrow-hope">
+          <span class="borrow-mark" aria-hidden="true">04 / HERE'S TO WHAT'S NEXT</span>
+          <p class="borrow-quote">“May this next year surprise you with good things you haven't even thought to wish for yet.”</p>
+          <p class="borrow-prompt">A bright wish for all the possibilities ahead.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wish-faq" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <p class="section-kicker">A FEW QUICK NOTES</p>
+        <h2 id="faq-title">Making a wish, made easy.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I make the message feel more personal?</summary>
+          <p>Yes. Add one thing you love about them and a favourite memory. Both details become part of the birthday note.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I send the wish to them?</summary>
+          <p>Once the wish appears, choose “Copy this wish” to paste it anywhere, or choose “Share the love” to open your device's sharing options.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I make a wish for someone else?</summary>
+          <p>Of course. Go back to the form, enter a different name, choose how you know them, and create a fresh note.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="little-rituals" aria-labelledby="ritual-title">
+      <div class="section-heading section-heading-compact">
+        <p class="section-kicker">MAKE THE MOMENT THEIRS</p>
+        <h2 id="ritual-title">A tiny celebration, a lasting memory.</h2>
+      </div>
+      <div class="ritual-list">
+        <article class="ritual-item">
+          <span class="ritual-step">01</span>
+          <span class="ritual-emoji" aria-hidden="true">💌</span>
+          <div>
+            <h3>Send it with a little note</h3>
+            <p>Add a memory or an inside joke when you share the wish.</p>
+          </div>
+          <span class="ritual-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="ritual-item">
+          <span class="ritual-step">02</span>
+          <span class="ritual-emoji" aria-hidden="true">🕯️</span>
+          <div>
+            <h3>Make a wish together</h3>
+            <p>Save the candle moment. It becomes a lovely story later.</p>
+          </div>
+          <span class="ritual-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="ritual-item">
+          <span class="ritual-step">03</span>
+          <span class="ritual-emoji" aria-hidden="true">📸</span>
+          <div>
+            <h3>Keep one little memory</h3>
+            <p>A photo, a voice note, or the card they keep on their desk.</p>
+          </div>
+          <span class="ritual-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing-note" aria-label="A final birthday reminder">
+      <span class="closing-spark" aria-hidden="true">✦</span>
+      <p>The best present is letting someone know<br /><strong>how glad you are that they're here.</strong></p>
+      <span class="closing-heart" aria-hidden="true">♥</span>
+    </section>
+
+    <footer class="footer">
+      <a class="footer-brand" href="/">little celebrations</a>
+      <span>
+        Made for the people who make life lovely
+        <span class="heart">♥</span>
+      </span>
+      <span class="footer-cake" aria-hidden="true">🎂</span>
+    </footer>
   </main>
 
   <script>
     const card = document.querySelector(".wish-card");
+
+    const copyButton = document.querySelector(".copy-button");
+    if (copyButton) {
+      copyButton.addEventListener("click", async () => {
+        const message = document.getElementById(copyButton.dataset.copyTarget);
+        const title = document.querySelector(".wish-title");
+        const text = `${title.textContent}\n\n${message.innerText}\n\nWith all my love ♥`;
+        try {
+          await navigator.clipboard.writeText(text);
+          copyButton.innerHTML = '<span aria-hidden="true">✓</span> Copied with love';
+          window.setTimeout(() => { copyButton.innerHTML = '<span aria-hidden="true">▢</span> Copy this wish'; }, 2200);
+        } catch {
+          copyButton.textContent = "Select the wish text to copy";
+        }
+      });
+    }
+
+    const shareButton = document.querySelector(".share-button");
+    if (shareButton) {
+      shareButton.addEventListener("click", async () => {
+        const title = document.querySelector(".wish-title").textContent;
+        const message = document.getElementById("wish-message").innerText;
+        const shareData = { title, text: `${title}\n\n${message}` };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (error) { if (error.name !== "AbortError") console.error(error); }
+        } else {
+          const url = `https://wa.me/?text=${encodeURIComponent(shareData.text)}`;
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      });
+    }
+
+    const wishForm = document.querySelector(".wish-form");
+    const qualityInput = document.getElementById("special_thing");
+    const relationshipInput = document.getElementById("relationship");
+
+    document.querySelectorAll(".quality-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        qualityInput.value = chip.dataset.quality;
+        qualityInput.focus();
+      });
+    });
+
+    document.querySelectorAll(".library-pick").forEach((suggestion) => {
+      suggestion.addEventListener("click", () => {
+        relationshipInput.value = suggestion.dataset.relationship;
+        qualityInput.value = suggestion.dataset.quality;
+        wishForm.scrollIntoView({ behavior: "smooth", block: "center" });
+        qualityInput.focus({ preventScroll: true });
+      });
+    });
+
     if (card && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const colors = ["#f87575", "#ffc857", "#8ac6a1", "#83b9d8", "#bd9ce0", "#f2a6b3"];
       for (let i = 0; i < 72; i++) {
