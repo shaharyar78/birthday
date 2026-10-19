@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Wish Maker 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating balloons decoration -->
+  <div class="balloons" aria-hidden="true">
+    <span class="balloon" style="--x:10%; --d:6s; --h:70px; background:#ff5c8a;"></span>
+    <span class="balloon" style="--x:25%; --d:7s; --h:90px; background:#ffd166;"></span>
+    <span class="balloon" style="--x:45%; --d:5.5s; --h:80px; background:#6ee7b7;"></span>
+    <span class="balloon" style="--x:65%; --d:8s; --h:100px; background:#7dd3fc;"></span>
+    <span class="balloon" style="--x:80%; --d:6.5s; --h:75px; background:#c4b5fd;"></span>
+    <span class="balloon" style="--x:90%; --d:7.5s; --h:85px; background:#fca5a5;"></span>
+  </div>
+
+  <main class="container">
+    <h1 class="heading">🎈 Birthday Wish Maker 🎈</h1>
+    <p class="subtitle">Enter a name and get a personalised birthday wish!</p>
+
+    <form class="card form-card" action="/wish" method="post">
+      <label for="name" class="label">Naam likhiye (Enter the name)</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        class="input"
+        placeholder="e.g. Priya, Rahul, Aisha..."
+        required
+        autocomplete="off"
+        maxlength="40"
+      />
+      <button type="submit" class="btn">🎂 Make a Wish 🎂</button>
+    </form>
+
+    <!-- Python injects the personalised wish here -->
+    <!--WISH_SECTION-->
+  </main>
+
+  <script>
+    // Lightweight confetti burst when a birthday wish card is shown.
+    const card = document.querySelector(".wish-card");
+    if (card) {
+      const colors = ["#ff5c8a", "#ffd166", "#6ee7b7", "#7dd3fc", "#c4b5fd", "#fca5a5"];
+      const area = document.body;
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 2 + "s";
+        piece.style.animationDuration = 2.5 + Math.random() * 2 + "s";
+        piece.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+        area.appendChild(piece);
+      }
+    }
+  </script>
+</body>
+</html>
