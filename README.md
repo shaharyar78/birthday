@@ -30,6 +30,6 @@ variables are required. Render assigns the service's port automatically.
 | --- | --- |
 | `app.py` | Flask routes and birthday wish generation |
 | `index.html` | Page structure and name form |
-| `style.css` | Page styling and animations |
+| `static/style.css` | Page styling and animations |
 | `requirements.txt` | Flask and Gunicorn dependencies |
 | `render.yaml` | Render Blueprint deployment configuration |

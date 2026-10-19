@@ -8,7 +8,7 @@ import html
 import os
 import random
 
-from flask import Flask, request, send_from_directory
+from flask import Flask, request
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -60,11 +60,6 @@ def wish():
     if not name:
         name = "Dear Friend"
     return render_page(make_wish_card(name))
-
-
-@app.route("/style.css")
-def style():
-    return send_from_directory(BASE_DIR, "style.css")
 
 
 if __name__ == "__main__":
